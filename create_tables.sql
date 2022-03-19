@@ -31,7 +31,7 @@ CREATE TABLE EDUCATIONAL_DETAILS(
         startdate date,
         enddate date,
         PRIMARY KEY(userId,major,degree),
-		FOREIGN KEY (userId) REFERENCES USR(userID));
+	FOREIGN KEY (userId) REFERENCES USR(userID));
 
 CREATE TABLE MESSAGE(
         msgId integer UNIQUE NOT NULL,
@@ -42,12 +42,13 @@ CREATE TABLE MESSAGE(
         deleteStatus integer,
         status char(30) NOT NULL,
         PRIMARY KEY(msgId),
-		FOREIGN KEY(senderId) REFERENCES USR(userId),
-		FOREIGN KEY(receiverId) REFERENCES USR(userId));
+	FOREIGN KEY(senderId) REFERENCES USR(userId),
+	FOREIGN KEY(receiverId) REFERENCES USR(userId));
 
 CREATE TABLE CONNECTION_USR(
         userId char(40) NOT NULL,
         connectionId char(40) NOT NULL,
         status char(30) NOT NULL,
         PRIMARY KEY(userId,connectionId),
-		FOREIGN KEY (userId) REFERENCES USR(userID));
+	FOREIGN KEY (connectionID) REFERENCES USR(userID),
+	FOREIGN KEY (userId) REFERENCES USR(userID));

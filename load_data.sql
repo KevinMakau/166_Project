@@ -18,10 +18,10 @@ FROM 'Messages.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY CONNECTION(userId, 
+COPY CONNECTION_USR(userId, 
 connectionId, 
 status)
-FROM 'Connections.csv'
+FROM 'connections.csv'
 DELIMITER ','
 CSV HEADER;
 
